@@ -31,7 +31,6 @@ is shorthand for:
   </a>
   <script be-summoning='{
     "for": "[itemprop]",
-    "as": "itemprops"
     "beVigilant": false,
     "mutationObserverOptions": {
         "childList": true //only applicable if beVigilant is true
