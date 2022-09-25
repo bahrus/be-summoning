@@ -1,5 +1,7 @@
 # be-summoning
 
+be-summoning summons all child elements matching an attribute value.
+
 Example 1
 
 ```html

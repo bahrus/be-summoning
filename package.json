@@ -1,8 +1,17 @@
 {
   "name": "be-summoning",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "keywords": [
+    "web-components",
+    "web-component",
+    "custom-element",
+    "custom-elements",
+    "proxy",
+    "attribute-querying"
+  ],
+  "description": "be-summoning summons all child elements matching an attribute value.",
+  "main": "be-summoning.js",
+  "module": "be-summoning.js",
   "dependencies": {
     "be-decorated": "0.0.163",
     "be-hive": "0.0.68"
@@ -13,6 +22,14 @@
     "@skypack/package-check": "0.2.2",
     "@custom-elements-manifest/analyzer": "0.6.4"
   },
+  "exports": {
+    ".": "./be-summoning.js",
+    "./be-summoning.js": "./be-summoning.js"
+  },
+  "files": [
+    "*.*"
+  ],
+  "types": "types.d.ts",
   "scripts": {
     "test": "playwright test",
     "serve": "node node_modules/may-it-serve/serve.js",
