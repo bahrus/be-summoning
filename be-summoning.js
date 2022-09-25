@@ -17,11 +17,9 @@ export class BeSummoning extends EventTarget {
     #createQueryingProxy(self, firstToken) {
         const lisp = camelToLisp(firstToken);
         const attr = lisp.substring(0, lisp.length - 1);
-        console.log({ attr });
         const queryingProxy = new Proxy({}, {
             get(obj, prop) {
                 const val = camelToLisp(prop);
-                console.log({ val });
                 return self.querySelector(`[${attr}="${val}"]`);
             }
         });

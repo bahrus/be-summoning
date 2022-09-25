@@ -7,12 +7,11 @@ export class BeSummoning extends EventTarget implements Actions{
     intro(proxy: Proxy, self: Element): void {
         const t = this;
         const gatewayProxy = new Proxy(self, {
-            get(obj: any, prop, receiver){
+            get(obj: any, prop: string, receiver){
                 if(!(prop in obj)){
                     obj[prop] = t.#createQueryingProxy(self, prop);
                 }
                 return Reflect.get(obj, prop, receiver);
-                
             }
         });
         proxy.for = gatewayProxy;
@@ -21,13 +20,9 @@ export class BeSummoning extends EventTarget implements Actions{
     #createQueryingProxy(self: Element, firstToken: string){
         const lisp = camelToLisp(firstToken);
         const attr = lisp.substring(0, lisp.length - 1);
-
-        console.log({attr});
         const queryingProxy = new Proxy({}, {
-            
             get(obj: any, prop: string){
                 const val = camelToLisp(prop);
-                console.log({val});
                 return self.querySelector(`[${attr}="${val}"]`);
             }
         });
