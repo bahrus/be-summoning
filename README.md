@@ -22,6 +22,11 @@ What this does:
 
 
 oDiv.beDecorated.summoning.for.itemprops.director returns:
+
+```html
+<span itemprop="director">James Cameron</span>
+```
+
 oDiv.beDecorated.summoning.for.slots.myText returns:
 
 ```html
