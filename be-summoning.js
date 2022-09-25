@@ -6,6 +6,7 @@ export class BeSummoning extends EventTarget {
         const t = this;
         const gatewayProxy = new Proxy(self, {
             get(obj, prop, receiver) {
+                console.log({ obj, prop, receiver });
                 if (!(prop in obj)) {
                     obj[prop] = t.#createQueryingProxy(self, prop);
                 }
@@ -19,6 +20,9 @@ export class BeSummoning extends EventTarget {
         const attr = lisp.substring(0, lisp.length - 1);
         const queryingProxy = new Proxy({}, {
             get(obj, prop) {
+                if (prop === '*') {
+                    return Array.from(self.querySelectorAll(`[${attr}]`));
+                }
                 const val = camelToLisp(prop);
                 return self.querySelector(`[${attr}="${val}"]`);
             }

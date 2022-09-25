@@ -33,4 +33,6 @@ oDiv.beDecorated.summoning.for.slots.myText returns:
 <span slot="my-text">Let's have some different text!</span>
 ```
 
+oDiv.beDecorated.summoning.for.itemprops.['*'] return array of all elements with attribute itemprop 
+
 
