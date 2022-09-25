@@ -16,6 +16,7 @@ export class BeSummoning extends EventTarget implements Actions{
             }
         });
         proxy.for = gatewayProxy;
+        (<any>self).beDecorated.$ = gatewayProxy;
     }
 
     #createQueryingProxy(self: Element, firstToken: string){

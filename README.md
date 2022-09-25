@@ -23,18 +23,18 @@ Example 1
 What this does:
 
 
-oDiv.beDecorated.summoning.for.itemprops.director returns:
+oDiv.beDecorated.$.itemprops.director returns:
 
 ```html
 <span itemprop="director">James Cameron</span>
 ```
 
-oDiv.beDecorated.summoning.for.slots.myText returns:
+oDiv.beDecorated.$.slots.myText returns:
 
 ```html
 <span slot="my-text">Let's have some different text!</span>
 ```
 
-oDiv.beDecorated.summoning.for.itemprops.['*'] return array of all elements with attribute itemprop 
+oDiv.beDecorated.$.itemprops.['*'] return array of all elements with attribute itemprop 
 
 
