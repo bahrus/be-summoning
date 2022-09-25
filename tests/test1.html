@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div be-summoning itemscope itemtype="http://schema.org/Movie">
+        <h1 itemprop="name">Avatar</h1>
+        <span>Director:
+          <span itemprop="director">James Cameron</span>
+          (born August 16, 1954)</span>
+        <span itemprop="genre">Science fiction</span>
+        <a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer">
+          Trailer
+        </a>
+        <span slot="my-text">Let's have some different text!</span>
+      </div>
+      <div id='target'></div>
+      <script type=importmap>
+        {
+            "imports": {
+                "trans-render/": "../node_modules/trans-render/",
+                "xtal-element/": "../node_modules/xtal-element/",
+                "be-decorated/": "../node_modules/be-decorated/",
+                "be-hive/":  "../node_modules/be-hive/"
+            }
+        }
+    </script>
+    <script type=module>
+        import '../be-summoning.js'
+    </script>
+        <script>
+          function runScript(){
+              const itemscope = document.querySelector('[itemscope]');
+              const test = itemscope.beDecorated.summoning.for.itemprops['*']
+              if(test.length === 4){
+                  target.setAttribute('mark', 'good');
+              }
+             
+          }
+          setTimeout(() => {
+             runScript();
+         }, 4000);
+     </script>
+</body>
+</html>
