@@ -1,6 +1,7 @@
 import {define, BeDecoratedProps} from 'be-decorated/be-decorated.js';
 import {Actions, VirtualProps, PP, Proxy, ProxyProps} from './types';
 import {register} from "be-hive/register.js";
+import {camelToLisp} from 'trans-render/lib/camelToLisp.js';
 
 export class BeSummoning extends EventTarget implements Actions{
     intro(proxy: Proxy, self: Element): void {
@@ -8,7 +9,7 @@ export class BeSummoning extends EventTarget implements Actions{
         const gatewayProxy = new Proxy(self, {
             get(obj: any, prop, receiver){
                 if(!(prop in obj)){
-                    obj[prop] = t.#createQueryingProxy(self);
+                    obj[prop] = t.#createQueryingProxy(self, prop);
                 }
                 return Reflect.get(obj, prop, receiver);
                 
@@ -17,10 +18,17 @@ export class BeSummoning extends EventTarget implements Actions{
         proxy.for = gatewayProxy;
     }
 
-    #createQueryingProxy(self: Element, ){
+    #createQueryingProxy(self: Element, firstToken: string){
+        const lisp = camelToLisp(firstToken);
+        const attr = lisp.substring(0, lisp.length - 1);
+
+        console.log({attr});
         const queryingProxy = new Proxy({}, {
-            get(obj: any, prop){
-                console.log({prop});
+            
+            get(obj: any, prop: string){
+                const val = camelToLisp(prop);
+                console.log({val});
+                return self.querySelector(`[${attr}="${val}"]`);
             }
         });
         return queryingProxy;
