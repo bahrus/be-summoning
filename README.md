@@ -37,16 +37,25 @@ oDiv.beDecorated.$.itempropAttrEqDirector returns first element with itemprop=di
 <span itemprop="director">James Cameron</span>
 ```
 
-oDiv.beDecorated.$.slots.myText returns:
+from now, assume:
+
+```JavaScript
+const $ = oDiv.beDecorated.$;
+```
+
+$.slots.myText returns:
 
 ```html
 <span slot="my-text">Let's have some different text!</span>
 ```
 
-oDiv.beDecorated.$.itempropAttrs returns array of all elements with attribute itemprop 
+$.itempropAttrs returns array of all elements with attribute itemprop 
 
-oDiv.beDecorated.$.spanElems returns all spans (last capital letter is an E)
+$.spanElems returns all spans (last capital letter is an E, ends with s)
 
-oDiv.beDecorated.$.spanElem returns first span
+$.spanEl returns first span
 
-oDiv.beDecorated.$.spanElems.slotAttrsEqMyText returns any span elements with slot=my-text
+$.spanEls.slotAttrsEqMyText returns any span elements with slot=my-text
+
+
+oDiv.be
