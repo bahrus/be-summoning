@@ -1,4 +1,4 @@
-# be-summoning
+# be-summoning [WIP]
 
 [![Playwright Tests](https://github.com/bahrus/be-summoning/actions/workflows/CI.yml/badge.svg?branch=baseline)](https://github.com/bahrus/be-summoning/actions/workflows/CI.yml)
 
@@ -28,10 +28,10 @@ Example 1
 ```
 
 
-What this does:
+What this does: [ToDo]
 
 
-oDiv.beDecorated.$.itemprops.director returns:
+oDiv.beDecorated.$.itempropAttrEqDirector returns first element with itemprop=director:
 
 ```html
 <span itemprop="director">James Cameron</span>
@@ -43,6 +43,10 @@ oDiv.beDecorated.$.slots.myText returns:
 <span slot="my-text">Let's have some different text!</span>
 ```
 
-oDiv.beDecorated.$.itemprops.['*'] returns array of all elements with attribute itemprop 
+oDiv.beDecorated.$.itempropAttrs returns array of all elements with attribute itemprop 
 
+oDiv.beDecorated.$.spanElems returns all spans (last capital letter is an E)
 
+oDiv.beDecorated.$.spanElem returns first span
+
+oDiv.beDecorated.$.spanElems.slotAttrsEqMyText returns any span elements with slot=my-text
