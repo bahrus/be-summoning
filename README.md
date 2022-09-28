@@ -28,7 +28,7 @@ Example 1
 ```
 
 
-What this does: [ToDo]
+What this does: [TODO]
 
 
 oDiv.beDecorated.$.itempropAttrEqDirector returns first element with itemprop=director:
@@ -56,6 +56,8 @@ $.spanElems returns all spans (last capital letter is an E, ends with s)
 $.spanEl returns first span
 
 $.spanEls.slotAttrsEqMyText returns any span elements with slot=my-text
+
+include itself if matches
 
 
 oDiv.be
