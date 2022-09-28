@@ -15,6 +15,7 @@ export class BeSummoning extends EventTarget {
         });
         proxy.for = gatewayProxy;
         self.beDecorated.$ = gatewayProxy;
+        proxy.resolved = true;
     }
     #createQueryingProxy(self, firstToken) {
         const lisp = camelToLisp(firstToken);
